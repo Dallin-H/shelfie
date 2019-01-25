@@ -1,9 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser')
-const ctrl = require('./controller')
 const app = express();
+require('dotenv').config();
+const massive = require('massive');
+const ctrl = require('./controller')
 
 app.use(bodyParser.json())
+
+massive(process.env.CONNECTION_STRING).then((dbInstance) => {
+    app.set('db', dbInstance)
+}).catch(err => console.log(err));
+
+const baseurl = '/api/products';
 
 // app.get('/api/item', cr.getList)
 // app.post('/api/item', cr.addItem)
@@ -13,5 +21,5 @@ app.use(bodyParser.json())
 
 
 
-
-app.listen(4000, () => console.log(`4000: throwing lightning!!`))
+const PORT = process.env.PORT || 4000
+app.listen(PORT, () => console.log(`${PORT}: tossin lightning!!`))
