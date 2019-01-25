@@ -11,15 +11,14 @@ massive(process.env.CONNECTION_STRING).then((dbInstance) => {
     app.set('db', dbInstance)
 }).catch(err => console.log(err));
 
-const baseurl = '/api/products';
 
-// app.get('/api/item', cr.getList)
-// app.post('/api/item', cr.addItem)
+app.get(`/api/inventory`, ctrl.getAll)
+app.post(`/api/product`, ctrl.createProduct)
 // app.put('/api/item/:index', cr.editItem)
 // app.delete('/api/item/:index', cr.deleteItem)
 
 
 
 
-const PORT = process.env.PORT || 4000
-app.listen(PORT, () => console.log(`${PORT}: tossin lightning!!`))
+const SERVERPORT = process.env.SERVERPORT || 4000
+app.listen(SERVERPORT, () => console.log(`${ SERVERPORT}: tossin lightning!!`))

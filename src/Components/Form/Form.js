@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Form extends Component {
     constructor() {
         super();
         this.state = {
-            imageURLInput: '',
             productNameInput: '',
+            imageURLInput: '',
             priceInput: 0
         }
         this.handleCancelButton = this.handleCancelButton.bind(this)
@@ -39,7 +40,20 @@ class Form extends Component {
     }
 
     handleAddToInventoryButton() {
-
+        const productObj = {
+            name: this.state.productNameInput,
+            imageURL: this.state.imageURLInput,
+            price: this.state.priceInput
+        }
+        axios.post(`http://localhost:4000/api/product`, productObj)
+            .then( () => {
+                this.props.handleGetProducts()
+            })
+        this.setState({
+            imageURLInput: '',
+            productNameInput: '',
+            priceInput: 0
+        })
     }
 
 
