@@ -46,7 +46,7 @@ class Form extends Component {
             price: this.state.priceInput
         }
         axios.post(`http://localhost:4000/api/product`, productObj)
-            .then( () => {
+            .then(() => {
                 this.props.handleGetProducts()
             })
         this.setState({
@@ -59,9 +59,14 @@ class Form extends Component {
 
     render() {
         return (
-            <div className="Form">
-                {/*img will be a default until populated, then reset to default after cancel or add */}
-                {/* <img /> */}
+            <div className="Form"
+                style={{backgroundColor: 'green'}}
+            >
+                <div
+                style={{
+                    height: '100px', width: '150px', backgroundColor: 'blue', margin: '10px'
+                }}
+                ></div>
                 <h6>Image URL:</h6>
                 <input
                     onChange={(e) => this.handleImageURLInput(e.target.value)}

@@ -19,7 +19,7 @@ module.exports = {
                 console.log(err);
             });
     },
-    delete: (req, res, next) => {
+    deleteProduct: (req, res, next) => {
         const dbInstance = req.app.get('db');
         const { id } = req.params;
         dbInstance.delete_product(id)
@@ -34,4 +34,4 @@ module.exports = {
 
 
     }
-
+}

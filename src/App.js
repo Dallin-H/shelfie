@@ -18,33 +18,35 @@ class App extends Component {
 
   componentDidMount() {
     axios.get(`http://localhost:4000/api/inventory`)
-    .then(response => {
-      this.setState({
-        inventory: response.data
+      .then(response => {
+        this.setState({
+          inventory: response.data
+        })
       })
-    })
   }
 
   handleGetProducts() {
     axios.get(`http://localhost:4000/api/inventory`)
-    .then(response => {
-      this.setState({
-        inventory: response.data
+      .then(response => {
+        this.setState({
+          inventory: response.data
+        })
       })
-    })
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Dashboard 
-          inventory={this.state.inventory}
-        />
-        <Form 
-          inventory={this.state.inventory}
-          handleGetProducts={this.handleGetProducts}
-        />
+        <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'baseline'}}>
+          <Dashboard
+            inventory={this.state.inventory}
+          />
+          <Form
+            inventory={this.state.inventory}
+            handleGetProducts={this.handleGetProducts}
+          />
+        </div>
       </div>
     );
   }
