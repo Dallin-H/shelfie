@@ -19,7 +19,6 @@ class Dashboard extends Component {
 
         return (
             <div className="Dashboard"
-            style= {{border: '2px solid black'}}
             >
                 Dashboard
         {mappedInventory}

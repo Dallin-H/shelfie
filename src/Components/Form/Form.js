@@ -60,11 +60,11 @@ class Form extends Component {
     render() {
         return (
             <div className="Form"
-                style={{backgroundColor: 'green'}}
+                style={{backgroundColor: '#3AD886'}}
             >
                 <div
                 style={{
-                    height: '100px', width: '150px', backgroundColor: 'blue', margin: '10px'
+                    height: '100px', width: '150px', backgroundColor: 'white', margin: '10px', border: '2px black solid'
                 }}
                 > IMAGE PREVIEW</div>
                 <h6>Image URL:</h6>

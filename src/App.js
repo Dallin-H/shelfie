@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'baseline'}}>
+        <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'baseline' }}>
           <Dashboard
             inventory={this.state.inventory}
           />
