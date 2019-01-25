@@ -25,7 +25,7 @@ let Product = (props) => {
             <div className='Details__container'>
                 <div>
                 <h3>{props.name}</h3>
-                <h6>{props.price}</h6>
+                <h6>${props.price}</h6>
                 </div>
             </div>
             <div>

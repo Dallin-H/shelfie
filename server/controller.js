@@ -1,7 +1,7 @@
 module.exports = {
     getAll: (req, res) => {
         const dbInstance = req.app.get('db');
-        dbInstance.get_inventory([])
+        dbInstance.get_inventory()
             .then(simulationProducts => res.status(200).send(simulationProducts))
             .catch(err => {
                 res.status(500).send({ errorMessage: "failed to getAll" });

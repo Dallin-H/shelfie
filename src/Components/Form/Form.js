@@ -66,21 +66,24 @@ class Form extends Component {
                 style={{
                     height: '100px', width: '150px', backgroundColor: 'blue', margin: '10px'
                 }}
-                ></div>
+                > IMAGE PREVIEW</div>
                 <h6>Image URL:</h6>
                 <input
                     onChange={(e) => this.handleImageURLInput(e.target.value)}
                     value={this.state.imageURLInput}
+                    style={{width: '150px'}}
                 />
                 <h6>Product Name:</h6>
                 <input
                     onChange={(e) => this.handleProductNameInput(e.target.value)}
                     value={this.state.productNameInput}
+                    style={{width: '150px'}}
                 />
                 <h6>Price:</h6>
                 <input
                     onChange={(e) => this.handlePriceInput(e.target.value)}
                     value={this.state.priceInput}
+                    style={{width: '150px'}}
                 />
                 <div className='Button__container'>
                     <button
