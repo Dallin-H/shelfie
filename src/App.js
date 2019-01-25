@@ -16,6 +16,15 @@ class App extends Component {
     this.handleGetProducts = this.handleGetProducts.bind(this)
   }
 
+  componentDidMount() {
+    axios.get(`http://localhost:4000/api/inventory`)
+    .then(response => {
+      this.setState({
+        inventory: response.data
+      })
+    })
+  }
+
   handleGetProducts() {
     axios.get(`http://localhost:4000/api/inventory`)
     .then(response => {

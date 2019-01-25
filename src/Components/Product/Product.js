@@ -10,6 +10,8 @@ let Product = (props) => {
             <h3>{props.name}</h3>
             <h6>{props.price}</h6>
         </div>
+        <button> EDIT </button>
+        <button> DELETE </button>
        </div>
     )
 }

@@ -14,8 +14,8 @@ massive(process.env.CONNECTION_STRING).then((dbInstance) => {
 
 app.get(`/api/inventory`, ctrl.getAll)
 app.post(`/api/product`, ctrl.createProduct)
+app.delete('/api/product/:index', cr.deleteItem)
 // app.put('/api/item/:index', cr.editItem)
-// app.delete('/api/item/:index', cr.deleteItem)
 
 
 
